@@ -6,11 +6,11 @@
 /*   By: agirardi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 12:42:58 by agirardi          #+#    #+#             */
-/*   Updated: 2021/11/02 16:10:34 by agirardi         ###   ########lyon.fr   */
+/*   Updated: 2021/11/02 16:35:03 by agirardi         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
 int	ft_isdigit(int c)
 {

@@ -6,11 +6,11 @@
 /*   By: agirardi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 16:00:28 by agirardi          #+#    #+#             */
-/*   Updated: 2021/11/02 16:10:20 by agirardi         ###   ########lyon.fr   */
+/*   Updated: 2021/11/02 16:34:47 by agirardi         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
 int	ft_isalnum(int c)
 {

@@ -6,11 +6,11 @@
 /*   By: agirardi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 16:01:09 by agirardi          #+#    #+#             */
-/*   Updated: 2021/11/02 16:10:39 by agirardi         ###   ########lyon.fr   */
+/*   Updated: 2021/11/02 16:35:07 by agirardi         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
 int	ft_isprint(int c)
 {

@@ -1,26 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agirardi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/02 14:29:05 by agirardi          #+#    #+#             */
-/*   Updated: 2021/11/03 16:41:19 by agirardi         ###   ########lyon.fr   */
+/*   Created: 2021/11/03 14:54:11 by agirardi          #+#    #+#             */
+/*   Updated: 2021/11/03 18:03:27 by agirardi         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-void	*ft_memset(void *str, int c, size_t len)
+size_t	ft_strlen(const char *str)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
-	while (i < len)
+	while (str[i])
+		i++;
+	return (i);
+}
+
+char	*ft_strchr(const char *s, int c)
+{
+	int		i;
+	int		s_size;
+
+	s_size = ft_strlen(s);
+	i = 0;
+	while (i < s_size + 1)
 	{
-		((unsigned char *)str)[i] = (unsigned char)c;
+		if (s[i] == c)
+			return ((char *)s + i);
 		i++;
 	}
-	return (str);
+	return (NULL);
+}
+
+
+#include <stdio.h>
+#include <string.h>
+
+int	main(void)
+{
+	char	*string = "hellow world !";
+
+	printf("strchr 	  : %s\n", strchr(string, 111));
+	printf("ft_strchr : %s\n", ft_strchr(string, 111));
 }

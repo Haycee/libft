@@ -55,14 +55,14 @@ char	*ft_itoa(int n)
 
 int main(void)
 {
-    int num = -123456789;
-    int num2 = 123456789;
-    int num3 = 2147483647;
-    int num4 = -2147483648;
+	int num = -123456789;
+	int num2 = 123456789;
+	int num3 = 2147483647;
+	int num4 = -2147483648;
 
-    printf("\n\nRESULT : %s\n", ft_itoa(num));
-    printf("RESULT : %s\n", ft_itoa(num2));
-    printf("RESULT : %s\n", ft_itoa(num3));
-    printf("RESULT : %s\n", ft_itoa(num4));
+	printf("\n\nRESULT : %s\n", ft_itoa(num));
+	printf("RESULT : %s\n", ft_itoa(num2));
+	printf("RESULT : %s\n", ft_itoa(num3));
+	printf("RESULT : %s\n", ft_itoa(num4));
 }
 **/

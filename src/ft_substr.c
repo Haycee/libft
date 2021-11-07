@@ -19,14 +19,15 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (substring);
 }
 
-/**
+/*
 #include <stdio.h>
 
 int main(void)
 {
-    char *str = "Hello World !";
-    char *b;
-    b = ft_substr(str, 2, sizeof(char) * 9);
-    printf("Substring : %s\n", b);
+	char *str = "Hello World !";
+	char *b;
+	b = ft_substr(str, 2, sizeof(char) * 9);
+	printf("Substring : %s\n", b);
 }
-**/
+*/
+

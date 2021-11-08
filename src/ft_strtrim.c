@@ -46,26 +46,17 @@ char	*ft_strtrim(char const *s1, char const *set)
 		i++;
 		j++;
 	}
-	trimmed[end - start + 1] = '\0';
+	if (end != -1)
+		trimmed[end - start + 1] = '\0';
 	return (trimmed);
 }
 
 
-/**
+
 int	main(void)
 {
 	char	*str_trimmed;
-	str_trimmed = ft_strtrim("______e______Hello World!_______e____", "___");
+	str_trimmed = ft_strtrim("_____", "_");
 	printf("%s\n", str_trimmed);
-	str_trimmed = ft_strtrim("______e______Hello World!", "___");
-	printf("%s\n", str_trimmed);
-	str_trimmed = ft_strtrim("____________Hello World!_______e____", "___");
-	printf("%s\n", str_trimmed);
-	str_trimmed = ft_strtrim("aaaaaaa_Hello___bc", "abc");
-	printf("%s\n", str_trimmed);
-	str_trimmed = ft_strtrim("abc_______Hello__abc", "abc");
-	printf("%s\n", str_trimmed);
-	str_trimmed = ft_strtrim("abcHelloabc", "abc");
-	printf("%s\n", str_trimmed);
+
 }
-**/

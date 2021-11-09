@@ -1,29 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agirardi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/08 17:26:53 by agirardi          #+#    #+#             */
-/*   Updated: 2021/11/09 13:34:25 by agirardi         ###   ########lyon.fr   */
+/*   Created: 2021/11/09 10:25:16 by agirardi          #+#    #+#             */
+/*   Updated: 2021/11/09 10:56:42 by agirardi         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+char	*ft_strdup(const char *s)
 {
-	size_t	i;
+	char	*copy;
+	int		i;
 
+	copy = malloc(sizeof(char) * (ft_strlen((char *)s) + 1));
+	if (!copy)
+		return (NULL);
 	i = 0;
-	while (i < n)
+	while (s[i])
 	{
-		if (((unsigned char *)s1)[i] != ((unsigned char *)s2)[i])
-		{
-			return (((unsigned char *)s1)[i] - ((unsigned char *)s2)[i]);
-		}
+		copy[i] = s[i];
 		i++;
 	}
-	return (0);
+	copy[i] = '\0';
+	return (copy);
 }
+
+/**
+#include <stdio.h>
+
+int	main(void)
+{
+	char *str = "Hello World !";
+	char *copy;
+
+	copy = ft_strdup(str);
+	printf("copy : %s\n", copy);
+}
+**/

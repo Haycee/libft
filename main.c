@@ -1,7 +1,16 @@
-#include "./includes/libft.h"
+#include "libft.h"
 #include <stdio.h>
+#include <string.h>
 
 int	main(void)
 {
-	ft_memcpy(((void *)0), ((void *)0), 3);
+	char	**table;
+	int i = 0;
+	char s[] = "                  olol";
+	table = ft_split(s, ' ');
+	while (table[i])
+	{
+		printf("%s\n", table[i]);
+		i++;
+	}
 }

@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agirardi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/08 17:26:53 by agirardi          #+#    #+#             */
-/*   Updated: 2021/11/09 13:34:25 by agirardi         ###   ########lyon.fr   */
+/*   Created: 2021/11/08 13:05:29 by agirardi          #+#    #+#             */
+/*   Updated: 2021/11/09 11:24:32 by agirardi         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+void	ft_putnbr_fd(int n, int fd)
 {
-	size_t	i;
+	char	*str;
+	int		i;
 
+	str = ft_itoa(n);
 	i = 0;
-	while (i < n)
+	while (str[i])
 	{
-		if (((unsigned char *)s1)[i] != ((unsigned char *)s2)[i])
-		{
-			return (((unsigned char *)s1)[i] - ((unsigned char *)s2)[i]);
-		}
+		write(fd, &str[i], 1);
 		i++;
 	}
-	return (0);
 }

@@ -1,4 +1,16 @@
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: agirardi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/09 10:22:47 by agirardi          #+#    #+#             */
+/*   Updated: 2021/11/09 11:21:20 by agirardi         ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
 
 int	find_digits(int num, int sign)
 {
@@ -26,6 +38,7 @@ char	*fill_digits(long int num, int digits, int sign, char *result)
 	}
 	if (sign == -1)
 		result[digits] = '-';
+	return (result);
 }
 
 char	*ft_itoa(int n)

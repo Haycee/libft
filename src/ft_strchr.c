@@ -10,17 +10,7 @@
 /*																			*/
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
-
-size_t	ft_strlen(const char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
+#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {
@@ -38,10 +28,7 @@ char	*ft_strchr(const char *s, int c)
 	return (NULL);
 }
 
-
-#include <stdio.h>
-#include <string.h>
-
+/**
 int	main(void)
 {
 	char	*string = "hellow world !";
@@ -49,3 +36,4 @@ int	main(void)
 	printf("strchr 	  : %s\n", strchr(string, 111));
 	printf("ft_strchr : %s\n", ft_strchr(string, 111));
 }
+**/

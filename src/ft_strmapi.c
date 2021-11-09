@@ -6,11 +6,11 @@
 /*   By: agirardi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 09:43:42 by agirardi          #+#    #+#             */
-/*   Updated: 2021/11/08 10:47:59 by agirardi         ###   ########lyon.fr   */
+/*   Updated: 2021/11/09 12:09:09 by agirardi         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "libft.h"
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {

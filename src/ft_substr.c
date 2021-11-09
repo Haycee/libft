@@ -1,9 +1,21 @@
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: agirardi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/09 10:28:17 by agirardi          #+#    #+#             */
+/*   Updated: 2021/11/09 10:58:11 by agirardi         ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*substring;
-	int		i;
+	size_t	i;
 
 	substring = malloc(sizeof(char) * (len + 1));
 	if (!substring)
@@ -17,15 +29,4 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	}
 	substring[i] = '\0';
 	return (substring);
-}
-
-
-#include <stdio.h>
-
-int main(void)
-{
-	char *str = "Hello World !";
-	char *b;
-	b = ft_substr(str, 2, sizeof(char) * 90);
-	printf("Substring : %s\n", b);
 }

@@ -6,14 +6,11 @@
 /*   By: agirardi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 11:10:09 by agirardi          #+#    #+#             */
-/*   Updated: 2021/11/08 11:45:31 by agirardi         ###   ########lyon.fr   */
+/*   Updated: 2021/11/09 10:24:04 by agirardi         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
-#include <unistd.h>
+#include "libft.h"
 
 void	ft_putchar_fd(char c, int fd)
 {

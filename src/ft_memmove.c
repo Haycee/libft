@@ -10,7 +10,7 @@
 /*																			*/
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "libft.h"
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
@@ -23,14 +23,4 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 		i++;
 	}
 	return (dst);
-}
-
-
-#include <stdio.h>
-
-int main(void)
-{
-
-	ft_memmove(arr1, arr2, 2 * sizeof(int));
-	printf("%i %i\n", arr1[0], arr2[1]);
 }

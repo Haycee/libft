@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: agirardi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/08 13:05:29 by agirardi          #+#    #+#             */
-/*   Updated: 2021/11/09 20:24:10 by agirardi         ###   ########lyon.fr   */
+/*   Created: 2021/11/10 09:09:50 by agirardi          #+#    #+#             */
+/*   Updated: 2021/11/10 09:51:06 by agirardi         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,17 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	char	*str;
-	int		i;
+	long	nbr;
 
-	str = ft_itoa(n);
-	i = 0;
-	while (str[i])
+	nbr = n;
+	if (nbr < 0)
 	{
-		write(fd, &str[i], 1);
-		i++;
+		ft_putchar_fd('-', fd);
+		nbr *= -1;
 	}
+	if (nbr > 9)
+	{
+		ft_putnbr_fd(nbr / 10, fd);
+	}
+	ft_putchar_fd(nbr % 10 + '0', fd);
 }

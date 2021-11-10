@@ -6,7 +6,7 @@
 /*   By: agirardi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 10:28:17 by agirardi          #+#    #+#             */
-/*   Updated: 2021/11/09 15:46:27 by agirardi         ###   ########lyon.fr   */
+/*   Updated: 2021/11/10 09:57:58 by agirardi         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,12 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*substring;
 	size_t	i;
 
-	if(!s)
+	if (!s)
 		return (NULL);
-	substring = malloc(sizeof(char) * (len + 1));
+	if (ft_strlen(s) > len)
+		substring = malloc(sizeof(char) * (len + 1));
+	else
+		substring = malloc(sizeof(char) * (ft_strlen(s) + 1));
 	if (!substring)
 		return (NULL);
 	i = 0;

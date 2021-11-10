@@ -47,18 +47,21 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		start;
 	int		end;
 
-	if(!s1)
-		return(NULL);
-	start = 0;
-	while (is_charset(s1, set, start))
-		start++;
-	end = ft_strlen(s1) - 1;
-	while (is_charset(s1, set, end))
-		end--;
-	if (end - start < -1)
-		return (ft_calloc(1, 1));
-	trimmed = malloc(sizeof(char) * (end - start) + 2);
-	if (!trimmed)
-		return (NULL);
-	return (moulinette_trim(start, end, trimmed, s1));
+	trimmed = 0;
+	if (s1 != 0 && set != 0)
+	{
+		start = 0;
+		while (is_charset(s1, set, start))
+			start++;
+		end = ft_strlen(s1) - 1;
+		while (is_charset(s1, set, end))
+			end--;
+		if (end - start < -1)
+			return (ft_calloc(1, 1));
+		trimmed = malloc(sizeof(char) * (end - start) + 2);
+		if (!trimmed)
+			return (NULL);
+		return (moulinette_trim(start, end, trimmed, s1));
+	}
+	return (trimmed);
 }

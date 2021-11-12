@@ -6,14 +6,13 @@
 /*   By: agirardi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 10:21:32 by agirardi          #+#    #+#             */
-/*   Updated: 2021/11/11 18:32:39 by agirardi         ###   ########lyon.fr   */
+/*   Updated: 2021/11/12 16:28:36 by agirardi         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-
-static int    ft_checkflow(long nb, short sign)
+static int	ft_checkflow(long nb, short sign)
 {
 	if (nb > 2147483648 || nb < -2147483649)
 	{

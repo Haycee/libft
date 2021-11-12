@@ -6,17 +6,20 @@
 /*   By: agirardi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 10:22:47 by agirardi          #+#    #+#             */
-/*   Updated: 2021/11/09 11:21:20 by agirardi         ###   ########lyon.fr   */
+/*   Updated: 2021/11/12 12:30:16 by agirardi         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 int	find_digits(int num, int sign)
 {
 	int	digits;
 
 	digits = 0;
+	if (num == 0)
+		digits++;
 	while (num != 0)
 	{
 		num /= 10;
@@ -57,25 +60,10 @@ char	*ft_itoa(int n)
 	}
 	digits = find_digits(num, sign);
 	result = malloc(digits * sizeof(char) + 1);
+	if (num == 0)
+		result[0] = '0';
 	if (!result)
 		return (NULL);
 	fill_digits(num, digits, sign, result);
 	return (result);
 }
-
-/**
-#include <stdio.h>
-
-int main(void)
-{
-	int num = -123456789;
-	int num2 = 123456789;
-	int num3 = 2147483647;
-	int num4 = -2147483648;
-
-	printf("\n\nRESULT : %s\n", ft_itoa(num));
-	printf("RESULT : %s\n", ft_itoa(num2));
-	printf("RESULT : %s\n", ft_itoa(num3));
-	printf("RESULT : %s\n", ft_itoa(num4));
-}
-**/

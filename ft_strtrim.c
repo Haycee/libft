@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	is_charset(char const *s1, char const *set, int start)
+static int	is_charset(char const *s1, char const *set, int start)
 {
 	int	i;
 

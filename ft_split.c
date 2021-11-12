@@ -6,13 +6,13 @@
 /*   By: agirardi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 10:24:44 by agirardi          #+#    #+#             */
-/*   Updated: 2021/11/10 09:53:20 by agirardi         ###   ########lyon.fr   */
+/*   Updated: 2021/11/12 16:17:59 by agirardi         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	word_counter(char const *s, char c)
+static	int	word_counter(char const *s, char c)
 {
 	int	counter;
 	int	i;
@@ -30,55 +30,53 @@ int	word_counter(char const *s, char c)
 	return (counter);
 }
 
-void	secondary_array_creator(char **splitted, char const *s, char c)
+static void	secondary_array_creator(char **splitted, char const *s, char c)
 {
-	int	counter;
 	int	i;
-	int	j;
+	int	i_tab;
+	int	j_tab;
 
-	counter = 0;
 	i = 0;
-	j = 0;
-	while (s[i])
+	i_tab = 0;
+	while (s[i] && i_tab < word_counter(s, c))
 	{
+		j_tab = 0;
 		while (s[i] == c)
 			i++;
-		while (s[i] != c && s[i])
+		while (s[i] != c && s[i + 1] != '\0')
 		{
-			counter++;
-			if (s[i + 1] == c || s[i + 1] == '\0')
-			{
-				splitted[j] = malloc(sizeof(char) * (counter + 1));
-				j++;
-				counter = 0;
-			}
+			j_tab++;
 			i++;
 		}
+		if (s[i] != c && s[i + 1] == '\0')
+			j_tab++;
+		splitted[i_tab] = ft_calloc(j_tab + 1, sizeof(char));
+		if (!splitted[i_tab])
+			return ;
+		i_tab++;
+		i++;
 	}
 }
 
-void	fill_array(char **splitted, char const *s, char c)
+static void	fill_array(char **splitted, char const *s, char c)
 {
 	int	i;
-	int	j;
-	int	k;
+	int	i_tab;
+	int	j_tab;
 
 	i = 0;
-	j = -1;
-	k = 0;
-	while (s[i])
+	i_tab = 0;
+	while (s[i] && i_tab < word_counter(s, c))
 	{
-		k = 0;
-		while (s[i] != c && s[i])
-		{
-			if (i == 0 || s[i - 1] == c)
-				j++;
-			splitted[j][k] = s[i];
-			k++;
-			if (s[i + 1] == c || s[i + 1] == '\0')
-				splitted[j][k] = '\0';
+		j_tab = 0;
+		while (s[i] == c)
 			i++;
-		}
+		while (s[i] != c && s[i + 1] != '\0')
+			splitted[i_tab][j_tab++] = s[i++];
+		if (s[i] != c && s[i + 1] == '\0')
+			splitted[i_tab][j_tab++] = s[i];
+		splitted[i_tab][j_tab] = '\0';
+		i_tab++;
 		i++;
 	}
 }
@@ -88,29 +86,13 @@ char	**ft_split(char const *s, char c)
 	char	**splitted;
 	int		word_count;
 
+	if (!s)
+		return (NULL);
 	word_count = word_counter(s, c);
-	splitted = malloc(sizeof(char *) * (word_count + 1));
+	splitted = ft_calloc(word_count + 1, sizeof(char *));
 	if (!splitted)
 		return (NULL);
-	splitted[word_count] = NULL;
 	secondary_array_creator(splitted, s, c);
 	fill_array(splitted, s, c);
 	return (splitted);
 }
-
-/**
-int	main(void)
-{
-	char	**table;
-	char	*str = "__Hellow_Worl_d__jkekodeldl_j";
-	char	c = '_';
-	int		i = 0;
-
-	table = ft_split(str, c);
-	while (table[i] != NULL)
-	{
-	printf("%s\n", table[i]);
-		i++;
-	}
-}
-**/

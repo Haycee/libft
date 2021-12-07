@@ -6,7 +6,7 @@
 /*   By: agirardi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 11:59:41 by agirardi          #+#    #+#             */
-/*   Updated: 2021/11/09 19:32:20 by agirardi         ###   ########lyon.fr   */
+/*   Updated: 2021/11/13 10:05:47 by agirardi         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,3 @@ void	ft_putendl_fd(char *s, int fd)
 	}
 	ft_putchar_fd('\n', fd);
 }
-
-/*
-int	main()
-{
-	int	fd = open("test.txt", O_RDWR | O_CREAT);
-	ft_putendl_fd("test", fd);
-}
-*/

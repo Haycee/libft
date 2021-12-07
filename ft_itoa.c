@@ -6,14 +6,13 @@
 /*   By: agirardi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 10:22:47 by agirardi          #+#    #+#             */
-/*   Updated: 2021/11/12 12:30:16 by agirardi         ###   ########lyon.fr   */
+/*   Updated: 2021/11/13 10:01:54 by agirardi         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-int	find_digits(int num, int sign)
+static int	find_digits(int num, int sign)
 {
 	int	digits;
 
@@ -30,7 +29,7 @@ int	find_digits(int num, int sign)
 	return (digits);
 }
 
-char	*fill_digits(long int num, int digits, int sign, char *result)
+static char	*fill_digits(long int num, int digits, int sign, char *result)
 {
 	result[digits] = '\0';
 	while (digits != 0)

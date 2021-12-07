@@ -6,13 +6,13 @@
 /*   By: agirardi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 10:24:44 by agirardi          #+#    #+#             */
-/*   Updated: 2021/11/12 16:17:59 by agirardi         ###   ########lyon.fr   */
+/*   Updated: 2021/12/05 10:19:02 by agirardi         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	int	word_counter(char const *s, char c)
+static int	word_counter(char const *s, char c)
 {
 	int	counter;
 	int	i;
@@ -30,7 +30,7 @@ static	int	word_counter(char const *s, char c)
 	return (counter);
 }
 
-static void	secondary_array_creator(char **splitted, char const *s, char c)
+static int	secondary_array_creator(char **splitted, char const *s, char c)
 {
 	int	i;
 	int	i_tab;
@@ -52,10 +52,11 @@ static void	secondary_array_creator(char **splitted, char const *s, char c)
 			j_tab++;
 		splitted[i_tab] = ft_calloc(j_tab + 1, sizeof(char));
 		if (!splitted[i_tab])
-			return ;
+			return (0);
 		i_tab++;
 		i++;
 	}
+	return (1);
 }
 
 static void	fill_array(char **splitted, char const *s, char c)
@@ -81,6 +82,19 @@ static void	fill_array(char **splitted, char const *s, char c)
 	}
 }
 
+static void	free_all(char **splitted)
+{
+	int	i;
+
+	i = 0;
+	while (splitted[i])
+	{
+		free(splitted[i]);
+		i++;
+	}
+	free(splitted);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	**splitted;
@@ -92,7 +106,11 @@ char	**ft_split(char const *s, char c)
 	splitted = ft_calloc(word_count + 1, sizeof(char *));
 	if (!splitted)
 		return (NULL);
-	secondary_array_creator(splitted, s, c);
+	if (!secondary_array_creator(splitted, s, c))
+	{
+		free_all(splitted);
+		return (NULL);
+	}
 	fill_array(splitted, s, c);
 	return (splitted);
 }

@@ -6,7 +6,7 @@
 /*   By: agirardi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 10:25:16 by agirardi          #+#    #+#             */
-/*   Updated: 2021/11/09 10:56:42 by agirardi         ###   ########lyon.fr   */
+/*   Updated: 2021/11/13 10:07:08 by agirardi         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,16 +29,3 @@ char	*ft_strdup(const char *s)
 	copy[i] = '\0';
 	return (copy);
 }
-
-/**
-#include <stdio.h>
-
-int	main(void)
-{
-	char *str = "Hello World !";
-	char *copy;
-
-	copy = ft_strdup(str);
-	printf("copy : %s\n", copy);
-}
-**/

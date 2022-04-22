@@ -54,7 +54,7 @@ SRCS:=		$(addprefix $(SRC_PATH)/,$(LST_SRCS))
 OBJS:=		$(addprefix $(OBJ_PATH)/,$(LST_OBJS))
 
 CC:=		gcc
-CFLAGS:= 	-Wall -Wextra -Werror
+CFLAGS:= 	-Wall -Wextra -Werror -I $(INCS)
 
 RM:=		rm -rf
 

@@ -1,7 +1,6 @@
 .vscode
 .DS_Store
 .objects
-libft.a
 *.o
 *.a
 .dSYM

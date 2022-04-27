@@ -54,7 +54,7 @@ SRCS:=		$(addprefix $(SRC_PATH)/,$(LST_SRCS))
 OBJS:=		$(addprefix $(OBJ_PATH)/,$(LST_OBJS))
 
 CC:=		gcc
-CFLAGS:= 	-Wall -Wextra -Werror -I $(INC_PATH)
+CFLAGS:= 	-Wall -Wextra -Werror
 
 RM:=		rm -rf
 
@@ -70,7 +70,7 @@ END	:=		\033[0m
 all : $(NAME)
 
 $(OBJ_PATH)/%.o: $(SRC_PATH)/%.c $(INCS) Makefile | $(OBJ_PATH)
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -I $(INC_PATH) -c $< -o $@
 	printf "$(BLUE)> Compiling :$(END) $<\n"
 
 $(OBJ_PATH):
